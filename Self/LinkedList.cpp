@@ -1,27 +1,46 @@
+// #include<iostream>
+// #include<cstdlib>
+// using namespace std;
+
+// struct employee {
+//     char *name;
+//     int id;
+//     float salary;
+// }E1;
+
+// struct employee *y;
+// employee *y = (struct employee*)malloc(sizeof(y));
+// free(y);
+
+// int main(){
+//     cout << "enter the sol:";
+//     cin>> &y->salary;
+//     return 0;
+// }
+
 #include<iostream>
-#include<cstdlib>
+#include<stdlib.h>
 using namespace std;
 
-struct employee {
-    char *name;
-    int id;
-    float salary;
-    employee(char *name, int id, float salary){
-        this->name=name;
-        this->id=id;
-        this->salary=salary;
-    }
-    void func(){
-    emp* y= (emp*)malloc(30*sizeof(emp));
-    free(y);
-    }
-}E1;
+struct natural{
+    int n;
+    struct natural *next=nullptr;
+};
 
-typedef struct employee emp;
+int Creation(){
+    struct natural *new_node;
+    new_node = (struct natural*)malloc(sizeof(struct natural));
+
+    cout << "enter the id: ";
+    for(int i=0; i<10; i++){
+    cin >> new_node->n;}
+    cout << new_node->n;
+    free(new_node);
+}
 
 int main(){
-    E1 = employee("Soumya", 8484, 93);
-    cout << E1.name;
-    E1.func();
-    return 0;
+    Creation();
+    struct natural *temp;
+    temp = temp->next;
+
 }
