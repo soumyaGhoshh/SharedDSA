@@ -8,15 +8,12 @@ struct employee {
     float salary;
 }E1;
 
-istream& operator>>(istream& cin, employee& y ){
-    cout << "enter the salary: ";
-    cin >> y.salary;
-    return cin;
-}
-
 int main(){
-    struct employee *y = (struct employee*)malloc(sizeof(struct employee));
+    struct employee *y;
+    employee *y = (struct employee*)malloc(sizeof(y));
     free(y);
-    cout << "salary: " << E1.salary;
+    cout << "enter the sol:";
+    cin >> &y->salary;
+    cout << "salary is:" << y->salary;
     return 0;
 }
