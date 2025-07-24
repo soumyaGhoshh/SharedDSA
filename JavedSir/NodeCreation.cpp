@@ -6,14 +6,13 @@ struct employee {
     char *name;
     int id;
     float salary;
-}E1;
+};
 
 int main(){
-    struct employee *y;
-    employee *y = (struct employee*)malloc(sizeof(y));
-    free(y);
+    struct employee *y = (struct employee*)malloc(sizeof(employee));
     cout << "enter the sol:";
-    cin >> &y->salary;
+    cin >> y->salary;
     cout << "salary is:" << y->salary;
+    free(y);
     return 0;
 }
