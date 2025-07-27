@@ -14,8 +14,7 @@ int main(){
 
     cout << "enter the id: ";
     for(int i=0; i<10; i++){
-    cin >> new_node->data;}
-    cout << new_node->data;
-    free(new_node);
-    
+    // cin >> new_node->data;}
+    // cout << new_node->data;
+    // free(new_node);
 }
