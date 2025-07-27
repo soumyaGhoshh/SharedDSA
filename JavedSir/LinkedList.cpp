@@ -8,13 +8,14 @@ struct Node{
     struct Node *next;
 }Start;
 
+//main function
 int main(){
     struct Node *new_node;
     new_node = (struct Node*)malloc(sizeof(struct Node));
 
     cout << "enter the id: ";
     for(int i=0; i<10; i++){
-    // cin >> new_node->data;}
-    // cout << new_node->data;
-    // free(new_node);
+    cin >> new_node->data;}
+    cout << new_node->data;
+    free(new_node);
 }
