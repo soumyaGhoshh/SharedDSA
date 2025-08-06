@@ -1,76 +1,60 @@
-#include<stdio.h>
-#include<stdlib.h>
-#define n
+#include <stdio.h>
+#include <stdlib.h>
+#define max 10
 
-struct Stack{
-    char name[20];
-    int id[n];
+struct Stack {
+    int a[max];
+    int top;  
 };
+typedef struct Stack stk;
 
-int top = -1;
-struct Stack Stack1;
-typedef struct Stack Stk;
-
-void push(){
-    printf("enter the number: ");
-    scanf("%d", Stack1.id);
-    if(top==n-1){
-        print("overflow");
-    }
-    else{
-        top++;
-        Stk[top]=Stack1.id;
-    }
+void InitTop(stk *stack1) {
+    stack1->top=-1;
 }
 
-void pop(){
-    int popped_item;
-    if(top==-1){
-        printf("underflow");
+void Push(stk *stack1, int d) {
+    if ((stack1->top)>=max-1){
+        printf("Overflow Condition : \n");
+        return;
     }
-    else{
-        popped_item=Stk[top];
-    }
+    stack1->top++;
+    stack1->a[stack1->top]=d;
 }
 
-void peak(){
-    if(top==-1){
-        printf("empty stack");
+void Pop(stk *stack1) {
+    if (stack1->top==-1) {
+        printf("UnderFlow Condition\n");
+        return;
     }
-    else{
-    printf("%d", Stk[top]);
-    }
+    stack1->top--;
 }
 
-void display(){
-    if(top==-1){
-        printf("empty stack");
-    }
-    else{
-        
-    }
+void PopStack(stk *stack1){
+
 }
 
-int main(){
-    while(1){
-    int choice;
-    swtich(choice){
-        case 1:
-            push();
-            break;
-        case 2:
-            push();
-            break;
-        case 3
-            peak();
-            break;
-        case 4:
-            display();
-            break;
-        default:
-            printf("enter something valid!");
-            return 0;
+void DisplayRev(stk *stack1) {
+    if (stack1->top==-1) {
+        printf("Stack Is Empty\n");
+        return;
+    }
+    printf("The Stack Is : \n");
+    int temp=stack1->top;
+    for(int i=-1;i<stack1->top;i++) {
+        printf("%d ",stack1->a[temp]);
+        temp--;
     }
 }
-    return 0;
+int main() {
+    stk MyStack;
+    int m;
+    InitTop(&MyStack);
+    for (int i=0;i<10;i++) {
+        printf("Enter The Element You Would Like To Push : \n");
+        scanf("%d",&m);
+        Push(&MyStack,m);
+    }
+    DisplayRev(&MyStack);
+    Pop(&MyStack);
+    DisplayRev(&MyStack);
 }
