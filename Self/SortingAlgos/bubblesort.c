@@ -1,7 +1,4 @@
-#include<iostream>
-#include<chrono>
-using namespace std;
-clock_t startTime = clock(); //
+#include<stdio.h>
 
 void swap(int *a, int *b){
     int temp = *a;
@@ -11,7 +8,7 @@ void swap(int *a, int *b){
 
 void BubbleSort(int a[], int n){
     // int flag=0;
-    for(int i = 0; i<n; i++){
+    for(int i = 0; i<n-1; i++){
         for(int j=0; j<n-i-1; j++){
             if(a[j]>a[j+1]){
                 swap(&a[j], &a[j+1]);
@@ -26,15 +23,15 @@ void BubbleSort(int a[], int n){
 
 int main(){
     int n;
-    cout << "enter the number of elements in array: ";
-    cin >> n;
+    printf("enter the number of elements in array: ");
+    scanf("%d", &n);
     int a[n];
     for(int i = 0; i<n; i++){
-        cin >> a[i];
+        scanf("%d", &a[i]);
     }
     BubbleSort(a, n);
     for(int i = 0; i<n; i++){
-        cout<< a[i] << " ";
+        printf("%d ", a[i]);
     }
-    cout << double( clock() - startTime ) / (double)CLOCKS_PER_SEC<< " seconds." << endl; //ignore 
+    return 0;
 }

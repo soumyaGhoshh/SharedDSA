@@ -1,6 +1,5 @@
 #include<iostream>
 using namespace std;
-clock_t startTime = clock(); // ignore
 
 void swap(int *a, int *b){
     int temp = *a;
@@ -33,5 +32,4 @@ int main(){
     for(int i = 0; i<n; i++){
         cout<< a[i] << " ";
     }
-    cout << double( clock() - startTime ) / (double)CLOCKS_PER_SEC<< " seconds." << endl; // ignore (time of execution)
 }
