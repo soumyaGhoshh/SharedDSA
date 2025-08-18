@@ -11,8 +11,8 @@ void swap(int *a, int*b){
 //merge
 void Merge(int a[], int low, int mid, int high){
     int i=low;
-    int k = 0;
     int j = mid +1;
+    int k = 0;
     int temp[high - low +1]; // cause no of elements we put dynamically 
     while(i<=mid && j<= high){
         if(a[i]<a[j]){ 
@@ -47,7 +47,7 @@ void MergeSort(int a[], int low, int high){
     MergeSort(a, low, mid); //for left subarray
     MergeSort(a, mid+1, high); //for right subarray
     Merge(a, low, mid, high); 
-    } 
+    }
 }
 
 int main(){

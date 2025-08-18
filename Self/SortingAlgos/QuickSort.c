@@ -50,8 +50,7 @@
 // }
 
 
-#include<iostream>
-using namespace std;
+#include<stdio.h>
 
 //swap
 void swap(int *a, int*b){
@@ -62,22 +61,22 @@ void swap(int *a, int*b){
 
 //partition
 int partition(int a[], int low, int high){
-    int i = low + 1;
-    int j = high;
+    int start = low;
+    int end = high;
     int pivot = low;
-    while(i<=j){
-        while(a[i]<= a[pivot]){ //left iterator
-            i++;
+    while(start<=end){
+        while(a[start]<= a[pivot]){ //left iterator
+            start++;
         }
-        while(a[j]> a[pivot]){ //right iterator
-            j--;
+        while(a[end]> a[pivot]){ //right iterator
+            end--;
         }
-        if(i<j){
-            swap(&a[i], &a[j]);
+        if(start<end){
+            swap(&a[start], &a[end]);
         }
     }
-    swap(&a[j], &a[pivot]);
-    return j;
+    swap(&a[pivot], &a[end]);
+    return end;
 }
 
 void QuickSort(int a[], int low, int high){
@@ -90,15 +89,15 @@ void QuickSort(int a[], int low, int high){
 
 int main(){
     int n;
-    cout << "enter the number of elements: ";
-    cin >> n;
+    printf("enter the number of elements: ");
+    scanf("%d", n);
     int a[n];
     for(int i=0; i<n; i++){
-        cin >> a[i];
+        scanf("%d", &a[i]);
     }
     QuickSort(a, 0, n-1);
     for(int i=0; i<n; i++){
-        cout << a[i] << " ";
+        printf("%d", a[i]);
     }
     return 0;
 }
